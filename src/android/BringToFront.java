@@ -27,8 +27,8 @@ public class BringToFront extends CordovaPlugin {
           String packageName = args.getString(0);
 
           Activity activity = this.cordova.getActivity();
-          it.setComponent(new ComponentName("com.phonegap.helloworld", "com.phonegap.helloworld.CordovaApp"));
-	        it.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+          it.setComponent(new ComponentName("com.phonegap.helloworld", "com.phonegap.helloworld." + activity.getClass().getSimpleName()));
+	        it.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP  | Intent.FLAG_ACTIVITY_SINGLE_TOP);
 
           Context context = activity.getApplicationContext();
           context.startActivity(it);
