@@ -23,7 +23,7 @@ public class BringToFront extends CordovaPlugin {
       Intent newIntent = new Intent();
         newIntent.setClassName("com.phonegap.helloworld", "com.phonegap.helloworld.CordovaApp");
         newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP  | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        context.startActivity(newIntent); 
+        callbackContext.startActivity(newIntent); 
       
       /*
       Intent notificationIntent = new Intent(cordova.getActivity(), cordova.getActivity().getClass());
